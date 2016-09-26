@@ -69,7 +69,7 @@ class SyntaxAnalyzer {
       println("SYNTAX ERROR - An adjective was expected when '" + Compiler.currentToken + "' was found.")
       setError()
     }
-  }
+  } // This method implements the BNF rule for an Adverb <A> ::= accidently | secretly | quickly
   def Adverb() = {
     if(ADVERB contains Compiler.currentToken)
       Compiler.Scanner.getNextToken()
