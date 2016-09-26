@@ -59,6 +59,7 @@ class SyntaxAnalyzer {
         setError()
       }
   }
+  // This method implements the BNF rule for an adjective <A> ::= happy | mean | hungry | fat
   def Adjective() = {
     if (ADJECTIVE contains Compiler.currentToken)
       Compiler.Scanner.getNextToken()
