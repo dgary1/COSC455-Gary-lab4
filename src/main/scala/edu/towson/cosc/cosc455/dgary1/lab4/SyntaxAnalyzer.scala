@@ -51,6 +51,7 @@ class SyntaxAnalyzer {
         setError()
       }
   }
+
   
 
   // This method implements the BNF rule for an article <N> ::= teh | a
