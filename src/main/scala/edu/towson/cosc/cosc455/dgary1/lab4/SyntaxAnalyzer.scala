@@ -7,6 +7,7 @@ class SyntaxAnalyzer {
   val VERBS : List[String] = List("ates", "lovez", "hatez")
   val NOUNS : List[String] = List("kat", "dawg", "rat")
   val ADJECTIVE : List[String] = List("fat", "hungry", "happy", "mean")
+  val ADVERB : List[String] = List("accidently", "secretly", "quickly")
 
   // Flag for errors and helper methods
   var errorFound : Boolean = false
@@ -19,6 +20,7 @@ class SyntaxAnalyzer {
   def Sentence() = {
     resetError()
     if (!errorFound) NounPhrase()
+    if (!errorFound) Adverb()
     if(!errorFound) Verb()
     if(!errorFound) NounPhrase()
   }
@@ -67,5 +69,9 @@ class SyntaxAnalyzer {
       println("SYNTAX ERROR - An adjective was expected when '" + Compiler.currentToken + "' was found.")
       setError()
     }
+  }
+  def Adverb() = {
+    if(ADVERB contains Compiler.currentToken)
+      Compiler.Scanner.getNextToken()
   }
 }
